@@ -20,3 +20,22 @@ module.exports = (on, config) => {
     // `on` is used to hook into various events Cypress emits
     // `config` is the resolved Cypress config
 }
+describe('Table Row Insertion', () => {
+    it('should insert a new row with correct cell values', () => {
+        cy.visit('your_base_url'); // Replace with your actual base URL
+
+        // Click the button to insert a new row
+        cy.get('input[type="button"]').click();
+
+        // Optional: Wait for a short period to ensure the DOM updates
+        cy.wait(100); // This line is optional, only use if necessary
+
+        // Assert that the first cell of the new row has the correct text
+        cy.get('#sampleTable tr:first-child td:first-child')
+          .should('have.text', 'New Cell1');
+
+        // Assert that the second cell of the new row has the correct text
+        cy.get('#sampleTable tr:first-child td:last-child')
+          .should('have.text', 'New Cell2');
+    });
+});
