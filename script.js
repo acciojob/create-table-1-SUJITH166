@@ -1,6 +1,6 @@
-
+ const sampleTable = document.getElementById("sampleTable");
 function insert_Row() {
-    const sampleTable = document.getElementById("sampleTable");
+   
     const newrow = document.createElement('tr');
 
     // Create two new cells
