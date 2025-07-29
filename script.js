@@ -9,5 +9,5 @@ function insert_Row() {
 					newcol.textContent=`New Cell${i+1}`;
 			newrow.appendChild(newcol)
 		}  
-	sampleTable.appendChild(newrow)
+	sampleTable.insertBefore(newrow,sampleTable.firstChild);
 }
